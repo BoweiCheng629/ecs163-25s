@@ -1,0 +1,38 @@
+body {
+  font-family: sans-serif;
+}
+.legend {
+  margin-top: 10px;
+  font-size: 12px;
+}
+.legend div {
+  display: flex;
+  align-items: center;
+}
+
+.star-legend {
+  font-size: 12px;
+  margin-top: 8px;
+}
+.star-legend div {
+  margin-bottom: 4px;
+}
+
+#starContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+#starLegend {
+  font-size: 12px;
+  max-width: 120px;
+  text-align: left;
+}
+
+#starLegend div {
+  display: flex;
+  align-items: center;
+}
+
