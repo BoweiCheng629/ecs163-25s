@@ -1,38 +1,51 @@
+/* Base font and layout */
 body {
   font-family: sans-serif;
-}
-.legend {
-  margin-top: 10px;
-  font-size: 12px;
-}
-.legend div {
-  display: flex;
-  align-items: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.star-legend {
-  font-size: 12px;
-  margin-top: 8px;
+/* Make SVGs responsive */
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
+
+/* General legend styling */
+.legend, .star-legend {
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.legend div,
 .star-legend div {
+  display: flex;
+  align-items: center;
   margin-bottom: 4px;
 }
 
+/* Radar chart layout container */
 #starContainer {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
   gap: 20px;
 }
 
+/* Side legend for radar chart */
 #starLegend {
-  font-size: 12px;
-  max-width: 120px;
+  max-width: 150px;
   text-align: left;
 }
 
-#starLegend div {
-  display: flex;
+/* Make sure checkboxes align well */
+label {
+  display: inline-flex;
   align-items: center;
+  margin: 4px 8px 4px 0;
 }
 
