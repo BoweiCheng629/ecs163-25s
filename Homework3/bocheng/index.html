@@ -1,1 +1,87 @@
+<!doctype html>
+<html lang="en" style="width:100%;height:100%;">
+<head>
+  <meta charset="utf-8">
+  <title>Pokémon Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="width:100%;height:100%;margin:0;padding:0;">
+  <h1 style="text-align: center;">Pokémon Dashboard</h1>
+
+  <div>
+  <label for="sortSelect">Sort By:</label>
+  <select id="sortSelect">
+    <option value="count">Count (Descending)</option>
+    <option value="alpha">Alphabetical (A-Z)</option>
+  </select>
+  <label for="barAttrSelect">Group Pokémon By:</label>
+  <select id="barAttrSelect">
+    <option value="Type_1" selected>Type 1</option>
+    <option value="Type_2">Type 2</option>
+    <option value="Color">Color</option>
+    <option value="Body_Style">Body Style</option>
+    <option value="Egg_Group_1">Egg Group 1</option>
+  </select>
+</div>
+<div id="tooltip" style="position: absolute; pointer-events: none; background: white; border: 1px solid #ccc; padding: 6px; font-size: 12px; border-radius: 4px; display: none;"></div>
+
+</div>
+<div id="view1">
+  <h3 style="text-align: center;">Pokémon Type Distribution</h3>
+</div>
+
+
+ <div id="view2">
+  <h3 style="text-align: center;">Height vs Weight: Pokémon Physical Dimensions (select up to 5 types)</h3>
+  <div id="checkboxContainer2" style="text-align: center; margin-bottom: 10px;"></div>
+  <div id="scatterContainer"></div>
+</div>
+
+
+
+<div id="view3">
+  <!-- Title -->
+  <h3 style="text-align: center;">Compare Pokémon (up to 5 names)</h3>
+
+  <!-- Stat group dropdown (now below title) -->
+  <div style="text-align: center; margin-bottom: 10px;">
+    <label for="statGroup">Stat Group:</label>
+    <select id="statGroup">
+      <option value="all" selected>All Stats</option>
+      <option value="offense">Offense (Attack, Sp_Atk, Speed)</option>
+      <option value="defense">Defense (Defense, Sp_Def, HP)</option>
+    </select>
+  </div>
+
+  <!-- Stat list displayed -->
+  <p id="statDisplay" style="text-align: center; font-style: italic; margin-top: -10px; margin-bottom: 10px;">
+    Stats: HP, Attack, Defense, Sp_Atk, Sp_Def, Speed
+  </p>
+
+  <!-- Type selector -->
+  <div style="text-align: center; margin-bottom: 10px;">
+    <label for="typeSelect">Select Type:</label>
+    <select id="typeSelect"></select>
+  </div>
+
+  <!-- Name checkboxes -->
+  <div id="nameCheckboxContainer" style="text-align: center; margin-bottom: 10px;"></div>
+
+  <!-- Radar chart and legend -->
+  <div id="starContainer" style="display: flex; justify-content: center; align-items: flex-start; gap: 20px;">
+    <div id="starPlot"></div>
+    <div id="starLegend" class="legendBox"></div>
+  </div>
+</div>
+
+
+
+  <script src="main.js"></script>
+</body>
+</html>
+
 
